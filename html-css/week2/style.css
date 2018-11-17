@@ -14,15 +14,20 @@ background-color: whitesmoke;
 h5{
     color:gray;
 }
- .width{
+@media only screen and (min-width: 992px){ 
+.width{
     width:70%;
    /* background-color:lightgrey;*/
     margin:auto;
 }
+}
+
+@media only screen and (min-width: 992px){
 .flex-container{
     display: flex;
    /*// align-content: center;
    // justify-content: center;*/
+}
 }
 .flex-container div{
     padding:20 30 20 0;
@@ -35,9 +40,11 @@ h5{
 height:120px;
 padding-top:50px;
 }
+@media only screen and (min-width: 992px){
 .side{
     width:40%;
     margin-top: 10px;
+}
 }
 .side p{
     padding-top:18px;
@@ -45,10 +52,12 @@ padding-top:50px;
     padding-right:2px;
 }
 
+@media only screen and (min-width: 992px){
 .cont{
     width:60%;
     margin-top: 10px;
 
+}
 }
 .cont p {
     padding-top:10px;
@@ -62,8 +71,11 @@ p{color:gray;
 footer{
     background-color:rgb(103,54,205);
 }
+
+@media only screen and (min-width: 992px){
 .footer-width{
     width:25%;
+}
 }
 ul{
     list-style-type: none;
@@ -78,18 +90,18 @@ footer p , iframe , h3 {
     padding-top:15px;
 }
  hr{
-    color:purple;
+    border-color: blueviolet;
    /* height: 1px;*/
  }
 
-
+ @media only screen and (min-width: 992px){
 .wraper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));;
     grid-template-rows: 100px 100px 100px;
     grid-gap:10px;
 }
-
+ }
 .wraper > div {
     display: flex;
     justify-content: center;
@@ -112,7 +124,7 @@ div a:hover{
 
 
 
-@media only screen and (max-width: 300px){
+@media only screen and (max-width: 600px){
  .width{
     width:100%;
    /* background-color:lightgrey;*/
@@ -120,7 +132,7 @@ div a:hover{
 }
 }
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 600px) {
 .flex-container{
     display: block;
    /* align-content: center;
@@ -128,14 +140,14 @@ div a:hover{
 }
 }
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 600px) {
 .flex-container div{
     padding:10 20 10 0;
 }
 }
 
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 600px) {
 .side{
     width:100%;
     margin-top: 10px;
@@ -143,7 +155,7 @@ div a:hover{
 }
 
 
-@media only screen and (max-width: 300px){
+@media only screen and (max-width: 600px){
 .side p{
     padding-top:18px;
     font-size: 13px;
@@ -153,7 +165,7 @@ div a:hover{
 }
 }
 
-@media only screen and (max-width: 300px){
+@media only screen and (max-width: 600px){
 .cont{
     width:100%;
     margin-top: 10px;
@@ -162,7 +174,7 @@ div a:hover{
 
 
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 600px) {
 .cont p {
     padding-top:10px;
     padding-left: 10px;
@@ -171,7 +183,7 @@ div a:hover{
 }
 }
 
-@media only screen and (max-width: 300px){
+@media only screen and (max-width: 600px){
 .footer-width{
     width:100%;
     
@@ -180,7 +192,7 @@ div a:hover{
 
 
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 600px) {
 footer p , iframe , h3 , li {
     padding-top:15px;
     padding-left: 10px;
@@ -189,7 +201,7 @@ footer p , iframe , h3 , li {
 
 
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 600px) {
 .wraper {
     display: grid;
     /*grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));;*/
