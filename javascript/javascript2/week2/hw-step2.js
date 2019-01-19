@@ -33,11 +33,11 @@ function myFunction(n, isThree, isFive){
             alert("not a multiple of 3 of 5");
 }
 const isThreeMultiple = function(){
-    document.body.style.backgroundColor="blue";
+    document.getElementsByTagName("div")[0].style.backgroundColor="blue";
 }
 
 const isFiveMultiple = () => {
-    document.body.style.backgroundColor="red";
+    document.getElementsByTagName("div")[0].style.backgroundColor="red";
 }
 
 
