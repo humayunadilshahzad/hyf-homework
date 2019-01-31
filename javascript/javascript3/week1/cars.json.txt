@@ -1,0 +1,20 @@
+[{
+		"cartype": "car",
+		"body": "saloon",
+		"make": "Toyota",
+		"model": "Yaris",
+		"year": 2018,
+		"madeIn": "Jajpan",
+		"price": "dkk 120000"
+	},
+	{
+		"cartype": "car",
+		"body": "saloon",
+		"make": "Toyota",
+		"model": "Ayvo",
+		"year": 2015,
+		"madeIn": "Jajpan",
+		"price": "dkk 130000"
+	
+	}
+]
