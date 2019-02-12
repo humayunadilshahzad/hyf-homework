@@ -80,53 +80,35 @@ for (init = 0; init < arrayPopulateLi.length; init++) {
 }
 
 
-
-
 let index = -1;
 const arrayLi = Array.from(document.querySelectorAll("ul>li"));
 
-let thumup = document.body.getElementsByClassName('accept')[0];
+var buttons = document.querySelectorAll('button');
 
-thumup.addEventListener('click', () => {
+for ( let i = 0; i < buttons.length; i++) {
 
-    animateLiOut().then
-    animateNextLiIntoView();
+    buttons[i].addEventListener('click', (e) => {
 
-});
+        if ( pending ) return;
+        pending  = true;
+        animate(buttons[i].className == 'accept' ? 1000 : -1000)
+            .then(animateNextLiIntoView)
+            .catch(err => console.log(err));
+    });
 
-function animateLiOut(i) {
+}
+
+var pending = false;
+
+function animate(direction) {
     index++;
-    if (index <= 9)
-        arrayLi[index].style = "transform:translateX(1000px)";
     return new Promise((resolve, reject) => {
+        if (index <= 9)  arrayLi[index].style = "transform:translateX(" + direction + "px)";
+        else { reject("no more images!")}
         setTimeout(() => {
+            pending = false;
             resolve();
         }, 700);
-    })
-}
-
-function animateNextLiIntoView() {
-    arrayLi[index + 1].style = "opacity: 1; transform: scale(1);";
-}
-
-//////////////////////Thumb Down//////////////////////////
-
-let thumDown = document.body.getElementsByClassName('reject')[0];
-thumDown.addEventListener('click', () => {
-    animateLiIn().then
-    animateNextLiIntoView();
-
-});
-
-function animateLiIn(i) {
-    index++;
-    if (index <= 9)
-        arrayLi[index].style = "transform:translateX(-1000px)";
-
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve();
-        }, 7000);
     })
 }
 
