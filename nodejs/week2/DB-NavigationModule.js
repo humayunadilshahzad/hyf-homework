@@ -22,7 +22,7 @@ class StudentBook {
 
     addNewStudent(NewStudent) {
         if (this.students.find(student => student.name.toLowerCase() === NewStudent.name.toLowerCase()))
-            return NewStudent.name + "Student already exists ..";
+            return NewStudent.name + " Student already exists ..";
         else {
             this.students.push(NewStudent);
             return NewStudent.name + " added to the Students Database";

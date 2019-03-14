@@ -46,17 +46,18 @@ const server = http.createServer((req, res) => {
             'phone': '134-4576-560'
         };
 
-       // hyf_students.addNewStudent(newStudent);
-       // res.end('student added');
-         res.end(JSON.stringify(hyf_students.addNewStudent(newStudent)));
+        // hyf_students.addNewStudent(newStudent);
+        // res.end('student added');
+        res.end(JSON.stringify(hyf_students.addNewStudent(newStudent)));
     }
     else if (url === '/editStudentInfo') {
         const studentInfo = {
-            'name': 'Sheila',
-            'classId': '07',
-            'phone': '11110000'
+            'name': 'Humayun Adil',
+            'classId': '08',
+            'email': 'adil@mail.com',
+            'phone': '31313131'
         };
-       // res.end(JSON.stringify(hyf_students.editStudentInfo(studentInfo)));
+         res.end(JSON.stringify(hyf_students.updateStudentRecord(studentInfo)));
     }
     else {
         res.end('Not found');
