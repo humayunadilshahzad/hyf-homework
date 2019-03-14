@@ -51,14 +51,26 @@ const server = http.createServer((req, res) => {
         res.end(JSON.stringify(hyf_students.addNewStudent(newStudent)));
     }
     else if (url === '/editStudentInfo') {
-        const studentInfo = {
+        const studentNewInfo = {
             'name': 'Humayun Adil',
             'classId': '08',
             'email': 'adil@mail.com',
             'phone': '31313131'
         };
-         res.end(JSON.stringify(hyf_students.updateStudentRecord(studentInfo)));
+         res.end(JSON.stringify(hyf_students.updateStudentRecord(studentNewInfo)));
     }
+
+    else if (url === '/deleteStudent') {
+        const studentToDelete = {
+            'name': 'Humayun Adil',
+            'classId': '08',
+            'email': 'adil@mail.com',
+            'phone': '31313131'
+        };
+         res.end(JSON.stringify(hyf_students.deleteStudent(studentToDelete)));
+    }
+    
+
     else {
         res.end('Not found');
     }

@@ -17,7 +17,7 @@ class StudentBook {
         if (StudentFound)
             return StudentFound;
         else
-            return  " Student not found ....";
+            return " Student not found ....";
     }
 
     addNewStudent(NewStudent) {
@@ -31,7 +31,7 @@ class StudentBook {
 
     updateStudentRecord(StudentReconrdtoUpdate) {
         let studentToBeEdited = this.students.find(student => student.name.toLowerCase() === StudentReconrdtoUpdate.name.toLowerCase());
-       // console.log(studentToBeEdited);
+        // console.log(studentToBeEdited);
         if (studentToBeEdited) {
             studentToBeEdited.name = StudentReconrdtoUpdate.name;
             studentToBeEdited.classId = StudentReconrdtoUpdate.classId;
@@ -41,6 +41,24 @@ class StudentBook {
         }
         else
             return StudentReconrdtoUpdate.name + " not found .... record updateing not posible";
+    }
+
+    deleteStudent(StudenttoDelete) {
+        if (this.students.find(student => student.name.toLowerCase() === StudenttoDelete.name.toLowerCase())) {
+
+           // let indexToDelete = this.students.indexOf();
+           // this.students.splice(indexToDelete, 1);
+           this.students.splice(this.students.indexOf(), 1);
+
+            return StudenttoDelete.name + " Deleted ....";
+
+        }
+
+
+        else {
+            // this.students.push(NewStudent);
+            return StudenttoDelete.name + " not found in Students Database";
+        }
     }
 }
 
