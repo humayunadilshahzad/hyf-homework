@@ -1,0 +1,14 @@
+body{
+    background-color: antiquewhite;
+    text-align: center;
+
+}
+h1{
+    font-family: cursive;
+    color: red;
+}
+img{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
