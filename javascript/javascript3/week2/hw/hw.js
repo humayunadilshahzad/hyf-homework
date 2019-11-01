@@ -45,4 +45,64 @@ let myPromise = (resolveAfter) => {
 
 }
 //console.log(myPromise(2));
-myPromise(6).then(res => { console.log(res) }).catch(err=>{console.log(err)});
+myPromise(6).then(res => { console.log(res) }).catch(err => { console.log(err) });
+
+//////////////////////////////////Rewrite setTimeout() and Navitgator.location//////////////////////////////////////////////////////
+
+function setTimeOutPromise(time) {
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            res(`resolved in ${time} seconds`);
+            // rej('rejected in a sec');
+        }, time * 1000);
+
+    });
+
+}
+//using rewritten settimeout() as promise
+setTimeOutPromise(6)
+    .then(val => console.log(val));
+
+
+
+// Rewriting getCurrentPosition using promise
+getCurrentLocarion = () => {
+    return new Promise((res, rej) => {
+        navigator.geolocation.getCurrentPosition(position => {
+            res(position);
+        },
+            error => {
+                if (error.code == error.PERMISSION_DENIED)
+                    rej("Getting Location Permition denied :-");
+            }
+        );
+    })
+
+}
+
+
+//using rewritten getcurrentposition as promise 
+getCurrentLocarion()
+    .then(position => {
+        console.log(`Latitude: ${position.coords.latitude}`);
+        console.log(`Longitude: ${position.coords.longitude}`);
+    })
+    .catch(error => { console.log(`Not allowed :::  ${error}`) });
+
+//////////////////////////// Fetching and waiting for data using Promise //////////////////////////
+
+getCurrentLocarion()
+    .then(position => {
+        return currentWeatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=75896dd083819fa058bd138ddbb640a6`;
+    })
+    .then(currentWeatherAPI => {
+       // console.log(currentWeatherAPI);
+        return fetch(currentWeatherAPI)
+    })
+    .then(res => res.json())
+    .then(data => {
+        setTimeout(() => {
+            console.log("City : " + data.name);
+            console.log("Temperature : " + data.main.temp);
+        }, 3000);
+    });
