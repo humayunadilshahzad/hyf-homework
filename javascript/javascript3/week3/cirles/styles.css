@@ -1,0 +1,10 @@
+body{
+    width: 80%;
+    margin: auto;
+    background-color: aqua;
+    color: red;
+    text-align: center;
+}
+canvas{
+    margin: auto;
+}
