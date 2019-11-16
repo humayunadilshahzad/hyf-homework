@@ -10,13 +10,13 @@ where due_date is null;
  select * 
  from task
  inner join status
- where task.status_id=status.id and status.name = 'done';
+ on task.status_id=status.id and status.name = 'done';
 
 -- 4 - Find all the tasks that are not marked as done
  select * 
  from task
  inner join status
- where task.status_id=status.id and status.name != 'done';
+ on task.status_id=status.id and status.name != 'done';
 
 -- 5 - Get all the tasks, sorted with the most recently created first
 select *
@@ -38,7 +38,7 @@ order by created desc;
  select title, status.name as text
  from task
  inner join status
- where task.status_id= status.id;
+ on task.status_id= status.id;
 
 -- 9 - Get the name of each status, along with a count of how many tasks have that status
  select status.name, count(task.status_id) as Count
