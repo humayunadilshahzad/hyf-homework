@@ -1,0 +1,27 @@
+
+const express = require("express");
+const router = express.Router();
+const fs = require("fs");
+// //const data = fs.readFileSync(__dirname + "<file path>");
+//const meals = JSON.parse(fs.readFileSync(__dirname + "/data/meals.json"));
+const reservations = JSON.parse(fs.readFileSync(__dirname + "/../data/reservations.json"));
+
+//route to send all reservations
+router.get("/",(req,res)=>{
+res.send(reservations);
+});
+
+//route to serd a specific reservation through Id'params'
+router.get("/:id", (req, res) => {
+    const reservationToFind = req.params.id;
+    console.log(reservationToFind);
+    const foundReservation = reservations.filter(reservation => {
+        return reservation.id === parseInt(reservationToFind);
+    });
+    res.send(foundReservation);
+});
+
+module.exports=router;
+
+
+
