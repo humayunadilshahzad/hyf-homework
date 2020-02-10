@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//import logo from './logo.svg';
 import './App.css';
 import TodoForm from './components/todoForm';
 
@@ -7,8 +6,6 @@ import TodoForm from './components/todoForm';
 //import NameObj from './components/nameObject'
 //import ArryState from './components/arrayState'
 //import MountingTodos from './components/simple-todos'
-
-
 
 function Todo({ todo, index, todoDone, todoRemove }) {
   //const { todo, index } = props;
@@ -21,26 +18,8 @@ function Todo({ todo, index, todoDone, todoRemove }) {
     </div>
   )
 }
-/////////////////////////////
-// function TodoForm({ addTodo }) {
-//   const [value, setValue] = useState('');
-
-//   const handleSubmit = ev => {
-//     ev.preventDefault();
-//     if (!value) return;
-//     addTodo(value);
-//     setValue('');
-//   }
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <input type="text" placeholder="enter new todo" value={value} onChange={e => setValue(e.target.value)} />
-//     </form>
-//   )
-// }
-
 ////////////////////////////
 let call=0;
-
 
 function App() {
   const basetodos = [{
@@ -60,9 +39,7 @@ function App() {
   }
   ];
 
- 
   const [todos, setTodos] = useState(basetodos);
-  
 
   const addTodo = text => {
     const newtodo = {
