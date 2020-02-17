@@ -65,12 +65,18 @@ function App() {
     setTodos(newTodos);
   }
 
-  const todoDone = id => {
-    const newTodos = [...todos];
-    newTodos[id - 1].isComplete = !newTodos[id - 1].isComplete;
-    setTodos(newTodos);
+   const todoDone = id => {
+    const updatedTodos = todos.map(todo => {
+      if (todo.id === id)
+        return {
+          ...todo,
+          isComplete: !todo.isComplete
+        }
+      else return todo;
+    })
+    setTodos(updatedTodos);
   }
-
+  
   return (
     <div className="App">
       <div className="todo-list">
