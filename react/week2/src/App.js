@@ -2,11 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import TodoForm from './components/todoForm';
 
-//import Todos from './components/Todos';
-//import NameObj from './components/nameObject'
-//import ArryState from './components/arrayState'
-//import MountingTodos from './components/simple-todos'
-
 function Todo({ todo, index, todoDone, todoRemove }) {
   //const { todo, index } = props;
   return (
@@ -19,7 +14,6 @@ function Todo({ todo, index, todoDone, todoRemove }) {
   )
 }
 ////////////////////////////
-let call=0;
 
 function App() {
   const basetodos = [{
@@ -65,11 +59,6 @@ function App() {
     setTodos(newTodos);
   }
   
-  useEffect(()=>{
-    document.title= `call: ${call}`;
-    call++;
-  });
-
   return (
     <div className="App">
       <div className="todo-list">
