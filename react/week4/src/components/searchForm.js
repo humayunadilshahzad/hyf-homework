@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 function SearchForm({ searchUser }) {
     const [userToSearch, setUserToSearch] = useState('');
 
-    useEffect(() => {
+   // useEffect(() => {
         //fetch(git api)
-        setUserToSearch(userToSearch);
-    },[userToSearch])
+    //    setUserToSearch(userToSearch);
+   // },[userToSearch])
 
     const handleSubmit = ev => {
         ev.preventDefault();
