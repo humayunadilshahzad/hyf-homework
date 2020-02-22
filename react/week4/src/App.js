@@ -3,28 +3,35 @@ import './App.css';
 import SearchForm from './components/searchForm';
 
 function App() {
-  const [users, setUsers] = useState('');
-  // useEffect(() => {
-  //   // fetch("gitAPI");
-  //   // set User State with api result  setUsers();
-    
-
-  // })
+  const [user, setUser] = useState('');
+  const [repos, setRepos] = useState([]);
+  
+  useEffect(() => {
+    if (user)
+      fetch(`https://api.github.com/users/${user}/repos`)
+        .then(res => res.json())
+        .then(res_repos => {
+          //  console.log('repos', repos[1].name);
+          // //setRep(reposs.concat(repos));
+          setRepos([...repos,res_repos]);
+          console.log(res_repos);
+        })
+        .then(() => console.log(repos))
+        .catch(err => console.log(err));
+  }, [user])
 
   const searchUser = user => {
-    setUsers(user);
-    console.log(users);
+    setUser(user);
+    console.log(user);
   }
 
 
   return (
-     
-
     <div className="App">
-      <header>
-        <h1>GitHub User sercher</h1>
-      </header>
-      <SearchForm  searchUser={searchUser} />
+
+      <h1>GitHub User sercher</h1>
+      <SearchForm searchUser={searchUser} />
+      {/* {<p>{repos}</p>} */}
 
     </div>
   );
