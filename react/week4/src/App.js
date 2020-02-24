@@ -11,9 +11,7 @@ function App() {
       fetch(`https://api.github.com/users/${user}/repos`)
         .then(res => res.json())
         .then(res_repos => {
-          //  console.log('repos', repos[1].name);
-          // //setRep(reposs.concat(repos));
-          setRepos([...repos,res_repos]);
+          setRepos(res_repos);
           console.log(res_repos);
         })
         .then(() => console.log(repos))
