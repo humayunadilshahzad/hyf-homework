@@ -11,7 +11,8 @@ const connection = mysql.createPool(MYSQL_URL);
 
 //Response all meals
 router.get('/', (req, res) => {
-    if (isEmpty(req.query)) {
+const sql = getSqlFromQuery(req.query);
+connection.query(sql, (err, results, fields) => {
 
         //Response all meals
         connection.query('SELECT * from meal', (err, results, fields) => {
