@@ -5,8 +5,7 @@ function Todo({ todo, id, todoDone, todoRemove, todoUpdate }) {
 
   const [editedTodo, setEditedtodo] = useState({ description: todo.description, deadline: todo.deadline });
   const [iscmdEdit, setcmdEdit] = useState(false);
-  //console.log(index, todo.description);
-  // console.log(index,editedTodo.description);
+
   return (
 
     <div className='todo' style={{ textDecoration: todo.isComplete ? 'line-through' : '' }}>
@@ -61,4 +60,3 @@ function areEqual(prevProps, newProps) {
 }
 
 export default Todo;
-//export default Todo;
