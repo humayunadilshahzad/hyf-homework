@@ -5,7 +5,6 @@ function TodoForm({ addTodo }) {
 
   const handleSubmit = ev => {
     ev.preventDefault();
-    //    console.log(newtodo);
     if (!newtodo.description) return;
     addTodo(newtodo);
     setNewtodo({ description: '', deadline: '' });
@@ -14,7 +13,6 @@ function TodoForm({ addTodo }) {
     <form className='form' onSubmit={handleSubmit}>
       <input className='todo' type="text" placeholder="enter new todo" value={newtodo.description}
         onChange={e => setNewtodo({ ...newtodo, description: e.target.value })} />
-
       <input className='todo' type="date" value={newtodo.deadline} onChange={e =>
         setNewtodo({ ...newtodo, deadline: e.target.value })} />
 
