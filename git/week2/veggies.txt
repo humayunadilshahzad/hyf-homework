@@ -5,3 +5,6 @@ karela
 bhindi
 matar
 gobhi
+aalu
+karela
+bhindi
